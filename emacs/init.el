@@ -5,6 +5,13 @@
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
+(global-set-key "\C-x\ \C-g" 'recentf-open-files)
+(setq redisplay-dont-pause t
+      scroll-margin 5
+      scroll-stop 1
+      scroll-conservatively 10000
+      scroll-preserve-screen-position 1)
+
 (use-package lsp-mode
   :ensure t
   :hook (c++-mode . lsp))
@@ -197,11 +204,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(wombat))
+ '(custom-enabled-themes '(atom-one-dark))
+ '(custom-safe-themes
+   '("75eef60308d7328ed14fa27002e85de255c2342e73275173a14ed3aa1643d545" default))
  '(global-display-line-numbers-mode t)
  '(menu-bar-mode nil)
  '(package-selected-packages
-   '(company lsp orderless vertico consult use-package lsp-mode yasnippet which-key lsp-ui lsp-treemacs helm-lsp flycheck ccls))
+   '(atom-one-dark-theme company lsp orderless vertico consult use-package lsp-mode yasnippet which-key lsp-ui lsp-treemacs helm-lsp flycheck ccls))
  '(recentf-mode t)
  '(tab-bar-mode t)
  '(tool-bar-mode nil)
